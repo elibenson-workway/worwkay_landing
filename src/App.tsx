@@ -5,19 +5,18 @@
 
 import { motion } from "motion/react";
 import { 
-  FileText, 
-  Calculator, 
-  Calendar, 
-  Users, 
-  Truck, 
-  CheckCircle2, 
-  ArrowRight, 
-  Upload, 
-  ShieldCheck, 
+  FileText,
+  Calculator,
+  Calendar,
+  Users,
+  Truck,
+  CheckCircle2,
+  ArrowRight,
+  Upload,
+  ShieldCheck,
   BarChart,
   Menu,
   X,
-  Plus,
   ChevronRight
 } from "lucide-react";
 import { useState } from "react";
@@ -65,10 +64,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg">
-                <Plus className="text-amber-500 w-6 h-6 stroke-[3]" />
-              </div>
-              <span className="text-2xl font-display font-bold tracking-tight text-slate-900">Workway</span>
+              <img src="/logo.png" alt="WorkwayTech" className="h-10 w-auto" />
+              <span className="text-2xl font-display font-bold tracking-tight text-slate-900">WorkwayTech</span>
             </div>
             
             {/* Desktop Menu */}
@@ -134,7 +131,7 @@ export default function App() {
                 De plano PDF a <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">obra ejecutada</span> en un clic.
               </h1>
               <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Sube tus planos y deja que nuestra IA genere el despiece, presupuesto y calendario. Conecta con proveedores y paga a contratistas por avance real.
+                Sube tus planos y deja que nuestra IA genere el despiece, catálogo de conceptos presupuesto y calendario. Conecta con proveedores y paga a contratistas por avance real.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-3 group">
@@ -210,7 +207,7 @@ export default function App() {
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">Control total de tu obra</h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Desde el primer trazo en el plano hasta la entrega de llaves. Workway automatiza lo tedioso para que te enfoques en construir.
+              Desde el primer trazo en el plano hasta la entrega de llaves. WorkwayTech automatiza lo tedioso para que te enfoques en construir.
             </p>
           </div>
 
@@ -342,7 +339,7 @@ export default function App() {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8">La obra de tus sueños, <br />bajo control.</h2>
             <p className="text-slate-400 text-xl mb-12 max-w-2xl mx-auto">
-              Únete a la nueva era de la construcción digital. Más eficiente, más transparente, más Workway.
+              Únete a la nueva era de la construcción digital. Más eficiente, más transparente, más WorkwayTech.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button className="w-full sm:w-auto bg-amber-500 text-slate-900 px-12 py-5 rounded-full font-bold text-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/20">
@@ -362,10 +359,8 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20">
             <div className="col-span-2 lg:col-span-2">
               <div className="flex items-center gap-2 mb-8">
-                <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center">
-                  <Plus className="text-amber-500 w-6 h-6 stroke-[3]" />
-                </div>
-                <span className="text-2xl font-display font-bold tracking-tight text-slate-900">Workway</span>
+                <img src="/logo.png" alt="WorkwayTech" className="h-10 w-auto" />
+                <span className="text-2xl font-display font-bold tracking-tight text-slate-900">WorkwayTech</span>
               </div>
               <p className="text-slate-500 max-w-xs mb-8 leading-relaxed">
                 Plataforma integral para la gestión, presupuestación y ejecución de proyectos de construcción mediante IA.
@@ -407,7 +402,7 @@ export default function App() {
             </div>
           </div>
           <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-xs">
-            <p>© {new Date().getFullYear()} Workway Technologies S.A. de C.V. Todos los derechos reservados.</p>
+            <p>© {new Date().getFullYear()} WorkwayTech Technologies S.A. de C.V. Todos los derechos reservados.</p>
             <div className="flex gap-8">
               <a href="#" className="hover:text-slate-600 transition-colors">Cookies</a>
               <a href="#" className="hover:text-slate-600 transition-colors">Sitemap</a>
