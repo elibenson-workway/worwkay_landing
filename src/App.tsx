@@ -107,14 +107,14 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-24 px-4 relative overflow-hidden">
+      <section className="pt-28 sm:pt-40 pb-16 sm:pb-24 px-4 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-200 blur-[120px] rounded-full" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-orange-100 blur-[120px] rounded-full" />
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -127,19 +127,19 @@ export default function App() {
                 </span>
                 Revolución en la Construcción
               </div>
-              <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 leading-[1.1] mb-8">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-bold text-slate-900 leading-[1.1] mb-6 sm:mb-8">
                 De plano PDF a <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">obra ejecutada</span> en un clic.
               </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-xl text-slate-600 mb-8 sm:mb-10 leading-relaxed max-w-xl">
                 Sube tus planos y deja que nuestra IA genere el despiece, catálogo de conceptos presupuesto y calendario. Conecta con proveedores y paga a contratistas por avance real.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-3 group">
+                <button className="w-full sm:w-auto bg-slate-900 text-white px-10 py-4 sm:py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-3 group">
                   <Upload className="w-5 h-5 text-amber-500" />
                   Subir Plano PDF
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="bg-white text-slate-900 border-2 border-slate-200 px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                <button className="w-full sm:w-auto bg-white text-slate-900 border-2 border-slate-200 px-10 py-4 sm:py-5 rounded-full font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                   Ver Ejemplo
                 </button>
               </div>
@@ -152,7 +152,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="relative"
+              className="relative hidden lg:block"
             >
               <div className="bg-white rounded-3xl p-4 shadow-2xl border border-slate-200 relative z-10">
                 <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
@@ -216,7 +216,7 @@ export default function App() {
               <motion.div 
                 key={index}
                 whileHover={{ y: -8 }}
-                className="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300"
+                className="p-6 lg:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300"
               >
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-8 border border-slate-100">
                   {feature.icon}
@@ -256,7 +256,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="relative">
+            <div className="relative hidden lg:block">
               <div className="aspect-square bg-slate-800 rounded-[3rem] p-8 border border-slate-700 shadow-2xl overflow-hidden group">
                 <img 
                   src="https://picsum.photos/seed/construction/800/800" 
@@ -332,12 +332,12 @@ export default function App() {
 
       {/* CTA Final */}
       <section className="py-24 px-4 bg-slate-50">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+        <div className="max-w-5xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl" />
           
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8">La obra de tus sueños, <br />bajo control.</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-6 sm:mb-8">La obra de tus sueños, <br />bajo control.</h2>
             <p className="text-slate-400 text-xl mb-12 max-w-2xl mx-auto">
               Únete a la nueva era de la construcción digital. Más eficiente, más transparente, más WorkwayTech.
             </p>
@@ -354,9 +354,10 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white pt-24 pb-12 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20">
+      <footer className="bg-white pt-24 pb-12 border-t border-slate-200 relative overflow-hidden">
+        <div className="dot-grid absolute inset-0 pointer-events-none opacity-40" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-12 mb-20">
             <div className="col-span-2 lg:col-span-2">
               <div className="flex items-center gap-2 mb-8">
                 <img src="/logo.png" alt="WorkwayTech" className="h-10 w-auto" />
