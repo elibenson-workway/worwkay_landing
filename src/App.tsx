@@ -72,12 +72,13 @@ export default function App() {
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Funciones</a>
               <a href="#how-it-works" className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Cómo funciona</a>
+              <a href="#proveedores" className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Proveedores</a>
               <a href="#pricing" className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Precios</a>
               <div className="h-6 w-px bg-slate-200 mx-2" />
-              <button className="text-sm font-bold text-slate-900 hover:text-amber-600 transition-colors">Iniciar Sesión</button>
-              <button className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-slate-800 transition-all active:scale-95 shadow-md">
+              <a href="https://app.workwaytech.com/" className="text-sm font-bold text-slate-900 hover:text-amber-600 transition-colors">Iniciar Sesión</a>
+              <a href="https://app.workwaytech.com/" className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-slate-800 transition-all active:scale-95 shadow-md">
                 Registro Gratis
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -98,10 +99,11 @@ export default function App() {
           >
             <a href="#features" className="text-lg font-bold text-slate-900">Funciones</a>
             <a href="#how-it-works" className="text-lg font-bold text-slate-900">Cómo funciona</a>
+            <a href="#proveedores" className="text-lg font-bold text-slate-900">Proveedores</a>
             <a href="#pricing" className="text-lg font-bold text-slate-900">Precios</a>
-            <button className="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold text-lg">
+            <a href="https://app.workwaytech.com/" className="w-full text-center bg-slate-900 text-white py-4 rounded-2xl font-bold text-lg">
               Registro Gratis
-            </button>
+            </a>
           </motion.div>
         )}
       </nav>
@@ -229,6 +231,32 @@ export default function App() {
         </div>
       </section>
 
+      {/* Proveedores */}
+      <section id="proveedores" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">Proveedores aliados</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              Trabajamos con proveedores de materiales y servicios de construcción para que cotices y compres directo desde tu proyecto.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="flex flex-col items-center justify-center gap-4 p-6 sm:p-10 rounded-[2rem] bg-white border border-slate-100 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300"
+            >
+              <img
+                src="/macon-jr-logo.png"
+                alt="Macon Jr"
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
+              <span className="text-sm font-bold text-slate-900 text-center">Macon Jr</span>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* How it Works */}
       <section id="how-it-works" className="py-24 bg-slate-900 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -305,9 +333,9 @@ export default function App() {
                 <li className="flex items-center gap-3 text-slate-600"><CheckCircle2 className="w-5 h-5 text-green-600" /> Gestión de evidencias</li>
                 <li className="flex items-center gap-3 text-slate-600"><CheckCircle2 className="w-5 h-5 text-green-600" /> Pagos por avance</li>
               </ul>
-              <button className="w-full py-4 rounded-2xl border-2 border-slate-900 font-bold text-slate-900 hover:bg-slate-900 hover:text-white transition-all">
+              <a href="https://app.workwaytech.com/" className="block w-full text-center py-4 rounded-2xl border-2 border-slate-900 font-bold text-slate-900 hover:bg-slate-900 hover:text-white transition-all">
                 Crear Cuenta Gratis
-              </button>
+              </a>
             </div>
 
             <div className="p-10 rounded-[2.5rem] bg-slate-900 text-white relative overflow-hidden shadow-2xl shadow-amber-500/10">
@@ -342,9 +370,9 @@ export default function App() {
               Únete a la nueva era de la construcción digital. Más eficiente, más transparente, más WorkwayTech.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button className="w-full sm:w-auto bg-amber-500 text-slate-900 px-12 py-5 rounded-full font-bold text-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/20">
+              <a href="https://app.workwaytech.com/" className="w-full sm:w-auto text-center bg-amber-500 text-slate-900 px-12 py-5 rounded-full font-bold text-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/20">
                 Registrarme Ahora
-              </button>
+              </a>
               <button className="w-full sm:w-auto bg-transparent text-white border-2 border-slate-700 px-12 py-5 rounded-full font-bold text-xl hover:bg-white/5 transition-all">
                 Hablar con un Experto
               </button>
@@ -357,7 +385,7 @@ export default function App() {
       <footer className="bg-white pt-24 pb-12 border-t border-slate-200 relative overflow-hidden">
         <div className="dot-grid absolute inset-0 pointer-events-none opacity-40" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-12 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-20">
             <div className="col-span-2 lg:col-span-2">
               <div className="flex items-center gap-2 mb-8">
                 <img src="/logo.png" alt="WorkwayTech" className="h-10 w-auto" />
@@ -382,15 +410,6 @@ export default function App() {
                 <li><a href="#" className="hover:text-amber-600 transition-colors">Catálogo de Conceptos</a></li>
                 <li><a href="#" className="hover:text-amber-600 transition-colors">Presupuestador</a></li>
                 <li><a href="#" className="hover:text-amber-600 transition-colors">Calendario de Obra</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-900 mb-8">Ecosistema</h4>
-              <ul className="space-y-4 text-slate-500 text-sm">
-                <li><a href="#" className="hover:text-amber-600 transition-colors">Red de Contratistas</a></li>
-                <li><a href="#" className="hover:text-amber-600 transition-colors">Portal de Proveedores</a></li>
-                <li><a href="#" className="hover:text-amber-600 transition-colors">Bolsa de Trabajo</a></li>
-                <li><a href="#" className="hover:text-amber-600 transition-colors">Certificaciones</a></li>
               </ul>
             </div>
             <div>
