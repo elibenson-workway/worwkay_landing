@@ -247,7 +247,7 @@ export default function App() {
               className="flex flex-col items-center justify-center gap-4 p-6 sm:p-10 rounded-[2rem] bg-white border border-slate-100 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300"
             >
               <img
-                src="/macon-jr-logo.png"
+                src="/macon-jr-logo.jpeg"
                 alt="Macon Jr"
                 className="h-16 sm:h-20 w-auto object-contain"
               />
