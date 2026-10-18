@@ -24,11 +24,9 @@ import { LANGUAGES, useLanguage, type Language } from "./i18n";
 
 function LanguageToggle({
   lang,
-  setLang,
   label,
 }: {
   lang: Language;
-  setLang: (next: Language) => void;
   label: string;
 }) {
   return (
@@ -37,12 +35,12 @@ function LanguageToggle({
       aria-label={label}
       className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 p-0.5"
     >
-      {LANGUAGES.map(({ code, label: codeLabel }) => (
-        <button
+      {LANGUAGES.map(({ code, label: codeLabel, href }) => (
+        <a
           key={code}
-          type="button"
-          onClick={() => setLang(code)}
-          aria-pressed={lang === code}
+          href={href}
+          hrefLang={code}
+          aria-current={lang === code ? "true" : undefined}
           className={`px-2.5 py-1 rounded-full text-xs font-bold transition-colors ${
             lang === code
               ? "bg-slate-900 text-white shadow-sm"
@@ -50,15 +48,15 @@ function LanguageToggle({
           }`}
         >
           {codeLabel}
-        </button>
+        </a>
       ))}
     </div>
   );
 }
 
-export default function App() {
+export default function App({ initialLang }: { initialLang?: Language } = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { lang, setLang, t } = useLanguage();
+  const { lang, t } = useLanguage(initialLang);
 
   const featureIcons = [
     <FileText className="w-6 h-6 text-amber-500" />,
@@ -87,7 +85,7 @@ export default function App() {
               <a href="#proveedores" className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">{t.nav.suppliers}</a>
               <a href="#pricing" className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">{t.nav.pricing}</a>
               <div className="h-6 w-px bg-slate-200 mx-2" />
-              <LanguageToggle lang={lang} setLang={setLang} label={t.a11y.switchLanguage} />
+              <LanguageToggle lang={lang} label={t.a11y.switchLanguage} />
               <a href="https://app.workwaytech.com/" className="text-sm font-bold text-slate-900 hover:text-amber-600 transition-colors">{t.nav.signIn}</a>
               <a href="https://app.workwaytech.com/" className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-slate-800 transition-all active:scale-95 shadow-md">
                 {t.nav.signUp}
@@ -96,7 +94,7 @@ export default function App() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-3">
-              <LanguageToggle lang={lang} setLang={setLang} label={t.a11y.switchLanguage} />
+              <LanguageToggle lang={lang} label={t.a11y.switchLanguage} />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 text-slate-900"
