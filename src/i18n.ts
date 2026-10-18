@@ -3,16 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export type Language = "es" | "en";
 
-export const LANGUAGES: { code: Language; label: string }[] = [
-  { code: "es", label: "ES" },
-  { code: "en", label: "EN" },
+export const LANGUAGES: { code: Language; label: string; href: string }[] = [
+  { code: "es", label: "ES", href: "/" },
+  { code: "en", label: "EN", href: "/en/" },
 ];
-
-const STORAGE_KEY = "workway_lang";
 
 const es = {
   nav: {
@@ -172,6 +170,13 @@ const es = {
   a11y: {
     toggleMenu: "Abrir menú",
     switchLanguage: "Cambiar idioma",
+  },
+  seo: {
+    title: "WorkwayTech — De plano PDF a obra ejecutada con IA",
+    description:
+      "Convierte tus planos PDF en despieces, presupuestos y calendarios de obra con IA. Conecta con proveedores y paga a contratistas por avance real.",
+    ogLocale: "es_MX",
+    ogImageAlt: "WorkwayTech — plataforma de construcción con IA",
   },
 };
 
@@ -336,35 +341,32 @@ const en: Translation = {
     toggleMenu: "Open menu",
     switchLanguage: "Change language",
   },
+  seo: {
+    title: "WorkwayTech — From PDF blueprint to a built project with AI",
+    description:
+      "Turn your PDF blueprints into takeoffs, budgets and construction schedules with AI. Connect with suppliers and pay contractors for real progress.",
+    ogLocale: "en_US",
+    ogImageAlt: "WorkwayTech — AI construction platform",
+  },
 };
 
 export const translations: Record<Language, Translation> = { es, en };
 
+// Language is derived from the URL path so each prerendered page
+// (/ for Spanish, /en/ for English) hydrates with a matching initial state.
 function detectInitialLanguage(): Language {
   if (typeof window === "undefined") return "es";
-  try {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "es" || stored === "en") return stored;
-  } catch {
-    // localStorage may be unavailable (e.g. private mode); fall back to detection.
-  }
-  const nav = window.navigator?.language?.toLowerCase() ?? "";
-  return nav.startsWith("en") ? "en" : "es";
+  return window.location.pathname.startsWith("/en") ? "en" : "es";
 }
 
-export function useLanguage() {
-  const [lang, setLangState] = useState<Language>(detectInitialLanguage);
+export function useLanguage(forced?: Language) {
+  const [lang] = useState<Language>(() => forced ?? detectInitialLanguage());
 
   useEffect(() => {
-    document.documentElement.lang = lang;
-    try {
-      window.localStorage.setItem(STORAGE_KEY, lang);
-    } catch {
-      // Ignore write failures (e.g. private mode / storage disabled).
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang;
     }
   }, [lang]);
 
-  const setLang = useCallback((next: Language) => setLangState(next), []);
-
-  return { lang, setLang, t: translations[lang] };
+  return { lang, t: translations[lang] };
 }
